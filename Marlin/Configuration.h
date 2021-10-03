@@ -599,9 +599,9 @@
 #define DEFAULT_Ki_LIST {   1.08,   1.08 }
 #define DEFAULT_Kd_LIST { 114.00, 114.00 }
 #else
-#define DEFAULT_Kp  22.20
-#define DEFAULT_Ki   1.08
-#define DEFAULT_Kd 114.00
+#define DEFAULT_Kp 21.20
+#define DEFAULT_Ki  2.04
+#define DEFAULT_Kd 55.15
 #endif
 #endif // PIDTEMP
 
@@ -1340,7 +1340,7 @@
 */
 //#define Z_IDLE_HEIGHT Z_HOME_POS
 
-//#define Z_HOMING_HEIGHT  4      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
 // Be sure to have this much clearance over your Z_MAX_POS to prevent grinding.
 
 //#define Z_AFTER_HOMING  10      // (mm) Height to move to after homing Z

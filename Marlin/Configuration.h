@@ -137,10 +137,8 @@
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
 
-// Choose the name from boards.h that matches your setup
-#ifndef MOTHERBOARD
-#define BOARD_LEAPFROG
-#endif
+
+#define MOTHERBOARD = BOARD_LEAPFROG
 
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "3D Printer"
@@ -163,7 +161,7 @@
 
    :[3, 4, 5, 6]
 */
-#define LINEAR_AXES 4
+#define LINEAR_AXES 3
 
 /**
    Axis codes for additional axes:

@@ -138,7 +138,7 @@
 //#define BLUETOOTH
 
 
-#define MOTHERBOARD = BOARD_LEAPFROG
+#define MOTHERBOARD BOARD_LEAPFROG
 
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "3D Printer"

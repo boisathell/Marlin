@@ -599,9 +599,9 @@
 #define DEFAULT_Ki_LIST {   1.08,   1.08 }
 #define DEFAULT_Kd_LIST { 114.00, 114.00 }
 #else
-#define DEFAULT_Kp 21.20
-#define DEFAULT_Ki  2.04
-#define DEFAULT_Kd 55.15
+#define DEFAULT_Kp 35.91
+#define DEFAULT_Ki  3.68
+#define DEFAULT_Kd 87.52
 #endif
 #endif // PIDTEMP
 
@@ -1167,7 +1167,7 @@
        |    [-]    |
        O-- FRONT --+
 */
-#define NOZZLE_TO_PROBE_OFFSET { 26.7, 0, -1.3 }
+#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1357,8 +1357,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 270
-#define Y_BED_SIZE 280
+#define X_BED_SIZE 260
+#define Y_BED_SIZE 298
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0

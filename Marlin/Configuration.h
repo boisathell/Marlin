@@ -592,7 +592,7 @@
 //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
 // Set/get with gcode: M301 E[extruder number, 0-2]
 
-#define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
+// #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
 #if ENABLED(PID_PARAMS_PER_HOTEND)
@@ -603,9 +603,9 @@
 #define DEFAULT_Kd_LIST { 114.00, 114.00 }
 #else
 
-#define DEFAULT_Kp 8.95
-#define DEFAULT_Ki 0.38
-#define DEFAULT_Kd 52.81
+#define DEFAULT_Kp 21.20
+#define DEFAULT_Ki  2.04
+#define DEFAULT_Kd 55.15
 
 #endif
 #endif // PIDTEMP

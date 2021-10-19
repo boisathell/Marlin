@@ -603,9 +603,9 @@
 #define DEFAULT_Kd_LIST { 114.00, 114.00 }
 #else
 
-#define DEFAULT_Kp 9.25
-#define DEFAULT_Ki 0.36
-#define DEFAULT_Kd 58.75
+#define DEFAULT_Kp 10.71
+#define DEFAULT_Ki 0.44
+#define DEFAULT_Kd 64.52
 
 #endif
 #endif // PIDTEMP
@@ -1172,7 +1172,7 @@
        |    [-]    |
        O-- FRONT --+
 */
-#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -1.4 }
+#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -1.7 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1596,7 +1596,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
 // Set the number of grid points per dimension.
-#define GRID_MAX_POINTS_X 3
+#define GRID_MAX_POINTS_X 4
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 // Probe along the Y axis, advancing X after each column

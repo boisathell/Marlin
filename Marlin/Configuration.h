@@ -506,11 +506,11 @@
 
 #define TEMP_RESIDENCY_TIME         10  // (seconds) Time to wait for hotend to "settle" in M109
 #define TEMP_WINDOW                  1  // (°C) Temperature proximity for the "temperature reached" timer
-#define TEMP_HYSTERESIS              3  // (°C) Temperature proximity considered "close enough" to the target
+#define TEMP_HYSTERESIS              5  // (°C) Temperature proximity considered "close enough" to the target
 
-#define TEMP_BED_RESIDENCY_TIME     10  // (seconds) Time to wait for bed to "settle" in M190
+#define TEMP_BED_RESIDENCY_TIME     10 // (seconds) Time to wait for bed to "settle" in M190
 #define TEMP_BED_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
-#define TEMP_BED_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
+#define TEMP_BED_HYSTERESIS          5  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_CHAMBER_RESIDENCY_TIME 10  // (seconds) Time to wait for chamber to "settle" in M191
 #define TEMP_CHAMBER_WINDOW          1  // (°C) Temperature proximity for the "temperature reached" timer
@@ -603,9 +603,9 @@
 #define DEFAULT_Kd_LIST { 114.00, 114.00 }
 #else
 
-#define DEFAULT_Kp 10.71
-#define DEFAULT_Ki 0.44
-#define DEFAULT_Kd 64.52
+#define DEFAULT_Kp 10.35
+#define DEFAULT_Ki 0.43
+#define DEFAULT_Kd 61.91
 
 #endif
 #endif // PIDTEMP
@@ -1172,11 +1172,11 @@
        |    [-]    |
        O-- FRONT --+
 */
-#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -1.7 }
+#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -2.7 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)

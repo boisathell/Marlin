@@ -603,9 +603,10 @@
 #define DEFAULT_Kd_LIST { 114.00, 114.00 }
 #else
 
-#define DEFAULT_Kp 10.35
-#define DEFAULT_Ki 0.43
-#define DEFAULT_Kd 61.91
+
+#define DEFAULT_Kp 10.71
+#define DEFAULT_Ki 0.44
+#define DEFAULT_Kd 64.52
 
 #endif
 #endif // PIDTEMP
@@ -700,7 +701,7 @@
 //#define PID_DEBUG             // Sends debug data to the serial port. Use 'M303 D' to toggle activation.
 //#define PID_OPENLOOP          // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
 //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
-//#define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
+   #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
 // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 #endif
 
@@ -1172,7 +1173,7 @@
        |    [-]    |
        O-- FRONT --+
 */
-#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -2.7 }
+#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -1.7 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.

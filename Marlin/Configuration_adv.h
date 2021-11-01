@@ -1926,10 +1926,10 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT 10
-  #define PROBING_MARGIN_RIGHT 10
+  #define PROBING_MARGIN_LEFT 15
+  #define PROBING_MARGIN_RIGHT 15
   #define PROBING_MARGIN_FRONT 80
-  #define PROBING_MARGIN_BACK 10
+  #define PROBING_MARGIN_BACK 20
 #endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
@@ -3798,7 +3798,7 @@
  * Host Prompt Support enables Marlin to use the host for user prompts so
  * filament runout and other processes can be managed from the host side.
  */
-//#define HOST_ACTION_COMMANDS
+#define HOST_ACTION_COMMANDS
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PROMPT_SUPPORT
   //#define HOST_START_MENU_ITEM  // Add a menu item that tells the host to start

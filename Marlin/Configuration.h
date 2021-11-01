@@ -1363,7 +1363,7 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 260
+#define X_BED_SIZE 261
 #define Y_BED_SIZE 295
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1539,8 +1539,8 @@
    these options to restore the prior leveling state or to always enable
    leveling immediately after G28.
 */
-#define RESTORE_LEVELING_AFTER_G28
-//#define ENABLE_LEVELING_AFTER_G28
+//#define RESTORE_LEVELING_AFTER_G28
+#define ENABLE_LEVELING_AFTER_G28
 
 /**
    Auto-leveling needs preheating

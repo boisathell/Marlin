@@ -102,7 +102,7 @@
 
    :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
 */
-#define SERIAL_PORT 0
+#define SERIAL_PORT -1
 
 /**
    Serial Port Baud Rate
@@ -115,7 +115,7 @@
 
    :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
 */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -123,7 +123,7 @@
    Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
    :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
 */
-//#define SERIAL_PORT_2 -1
+// #define SERIAL_PORT_2 -1
 //#define BAUDRATE_2 250000   // Enable to override BAUDRATE
 
 /**
@@ -131,14 +131,14 @@
    Currently only supported for AVR, DUE, LPC1768/9 and STM32/STM32F1
    :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
 */
-//#define SERIAL_PORT_3 1
+// #define SERIAL_PORT_3 3
 //#define BAUDRATE_3 250000   // Enable to override BAUDRATE
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
 
 
-#define MOTHERBOARD BOARD_LEAPFROG
+#define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B
 
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "3D Printer"
@@ -855,18 +855,18 @@
             TMC5130, TMC5130_STANDALONE, TMC5160, TMC5160_STANDALONE
    :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
 */
-#define X_DRIVER_TYPE  DRV8825
-#define Y_DRIVER_TYPE  DRV8825
-#define Z_DRIVER_TYPE  DRV8825
+#define X_DRIVER_TYPE  TMC2209
+#define Y_DRIVER_TYPE  TMC2209
+#define Z_DRIVER_TYPE  TMC2209
 //#define X2_DRIVER_TYPE A4988
-//#define Y2_DRIVER_TYPE A4988
+#define Y2_DRIVER_TYPE TMC2209
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
 //#define J_DRIVER_TYPE  A4988
 //#define K_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE DRV8825
+#define E0_DRIVER_TYPE TMC2209
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -2089,7 +2089,7 @@
    SD Card support is disabled by default. If your controller has an SD slot,
    you must uncomment the following option or it won't work.
 */
-//#define SDSUPPORT
+#define SDSUPPORT
 
 /**
    SD CARD: ENABLE CRC

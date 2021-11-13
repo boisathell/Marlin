@@ -1,0 +1,3 @@
+[submodule "custom-tools/skr_uploader"]
+	path = custom-tools/skr_uploader
+	url = https://github.com/An-GG/skr_uploader.git

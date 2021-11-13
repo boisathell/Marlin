@@ -15,7 +15,7 @@ def on_upload(source, target, env):
         try:
             port=str(next(possible).device)
         except (StopIteration):
-            sys.exit("Automatic port search failed. Specifiy a port manually with '--upload-port'")
+            sys.exit("\nERROR: Automatic port search failed. Specifiy a port manually with '--upload-port'")
     env.Execute("custom_tools/skr_uploader/upload.py " + port + " 115200 " + firmware_path)
     return 0
 

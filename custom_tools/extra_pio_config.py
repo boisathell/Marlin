@@ -1,18 +1,22 @@
 Import("env")
 from pathlib import Path
+import serial.tools.list_ports
+import sys
 
-# Python callback
 def on_upload(source, target, env):
-    for x in source:
-        print(x)
-    for x in target:
-        print(x)
-    print(env)
-    for k,v in env.items():
-        print(str(k) + " " + str(v))
     firmware_path = str(source[0])
-    # do something
-
-    env.Execute("custom_tools/skr_uploader/upload.py "+str(target[0])+" "+"115200"+" "+firmware_path)
+    port=""
+    envd=env.Dictionary()
+    if "UPLOAD_PORT" in envd:
+        port=str(env["UPLOAD_PORT"])
+    else:
+        possible=serial.tools.list_ports.grep("MARLIN")
+        print(possible)
+        try:
+            port=str(next(possible).device)
+        except (StopIteration):
+            sys.exit("Automatic port search failed. Specifiy a port manually with '--upload-port'")
+    env.Execute("custom_tools/skr_uploader/upload.py " + port + " 115200 " + firmware_path)
+    return 0
 
 env.Replace(UPLOADCMD=on_upload)

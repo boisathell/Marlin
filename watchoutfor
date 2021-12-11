@@ -1,0 +1,6 @@
+SEGMENT_LEVELED_MOVES
+LEVELED_SEGMENT_LENGTH 5.0
+
+if segment is too big, may skip over points
+
+

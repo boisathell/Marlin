@@ -1937,7 +1937,7 @@
   #define MESH_MIN_X 0
   #define MESH_MIN_Y 0
   #define MESH_MAX_X X_BED_SIZE
-  #define MESH_MAX_Y Y_BED_SIZE 
+  #define MESH_MAX_Y Y_MAX_POS
 #endif
 
 #if BOTH(AUTO_BED_LEVELING_UBL, EEPROM_SETTINGS)

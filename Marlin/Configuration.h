@@ -628,7 +628,7 @@
    heater. If your configuration is significantly different than this and you don't understand
    the issues involved, don't use bed PID until someone else verifies that your hardware works.
 */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -642,7 +642,7 @@
 
 #if ENABLED(PIDTEMPBED)
 //#define MIN_BED_POWER 0
-//#define PID_BED_DEBUG // Sends debug data to the serial port.
+#define PID_BED_DEBUG // Sends debug data to the serial port.
 
 // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -1173,7 +1173,7 @@
        |    [-]    |
        O-- FRONT --+
 */
-#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -1.7 }
+#define NOZZLE_TO_PROBE_OFFSET { -9.8, 17.65, -1.5 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.

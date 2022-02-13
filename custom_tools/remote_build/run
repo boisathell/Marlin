@@ -1,0 +1,40 @@
+#!/bin/bash
+
+PATCH_NAME="changes.patch"
+
+REMOTE_HOST="air"       # default remote host
+REMOTE_USER="an"        # default remote user
+REMOTE_PATH="~/Marlin"  # default path to Marlin on remote
+
+BIN_PATH=".pio/build/BIGTREE_SKR_2/firmware.bin"
+
+if [[ $1 ]]; then REMOTE_USER=$1; fi
+if [[ $2 ]]; then REMOTE_HOST=$2; fi
+if [[ $3 ]]; then REMOTE_PATH=$3; fi
+
+# special rules
+if [[ "$REMOTENAME" == "mbp" ]]; then REMOTE_PATH='~/Documents/Projects/Marlin'; fi
+if [[ "$REMOTENAME" == "rahul-desktop" ]]; then REMOTE_PATH='~/projects/Marlin'; fi
+
+REMOTE=$REMOTE_USER@$REMOTE_HOST
+echo "==> Using files at $REMOTE:$REMOTE_PATH/"
+
+ssh $REMOTE "rm $REMOTE_PATH/$BIN_PATH $REMOTE_PATH/$PATCH_NAME"
+
+echo -e "\n==> Sending patch (stored locally at $PATCH_NAME)"
+git diff HEAD > $PATCH_NAME
+scp $PATCH_NAME $REMOTE:$REMOTE_PATH/
+
+echo -e "\n==> Performing remote build"
+ssh $REMOTE << EOF
+    cd $REMOTE_PATH
+    git pull
+    git stash --include-untracked; # this is so if you happen to have changes on remote, they dont just get deleted
+    git apply $PATCH_NAME
+    pio run
+EOF
+scp $REMOTE:$REMOTE_PATH/$BIN_PATH .
+
+echo -e "\n==> Uploading to printer"
+../skr_uploader/upload.py $PORT $BAUD $FILENAME
+

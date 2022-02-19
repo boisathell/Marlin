@@ -1,4 +1,4 @@
-import { SerialPort } from 'serialport';
+import { SerialPort, ReadlineParser } from 'serialport';
 
 let k = {
     port: '/dev/ttyACM0',
@@ -6,6 +6,10 @@ let k = {
 }
 
 let port = new SerialPort({ path: k.port, baudRate: k.rate });
-port.write("G30 X100 Y100");
+const parser = new ReadlineParser()
+port.pipe(parser)
+parser.on('data', console.log)
+
+port.write("G30 X100 Y100\n");
 port.drain();
 

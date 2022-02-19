@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@types/node": "^17.0.18",
     "serialport": "^10.3.0"
   }
 }

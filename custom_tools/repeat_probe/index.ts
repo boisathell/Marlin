@@ -44,7 +44,7 @@ parser.on('data', (line:string) => {
     }
     if (line.startsWith('Bed X:')) {
         /* z probe line */
-        let z = parseInt(line.split('Z: ')[1]);
+        let z = parseFloat(line.split('Z: ')[1]);
         if (z != NaN) {
             console.log(z);
         }
